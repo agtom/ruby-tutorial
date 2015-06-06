@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	# ensure uniqueness of email in the database
 	before_save { self.email = email.downcase }
 	# hash around maximum required to remove ambiguity
 	validates :name, presence: true, length: {maximum: 50}
